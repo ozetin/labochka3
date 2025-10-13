@@ -7,14 +7,11 @@ EPS = 1e-10
 
 if __name__ == '__main__':
     x = float(input("value of x?"))
-    a = x
-    S, k = a, 1
+    S = 0.0
+    k = 1
+    a = 1.0
     if not (0 <= x <= 2):
         print("illegal value of x", file=sys.stderr)
-    else:
-        S = 0.0
-        k = 1
-        a = 1.0
 
     while abs(a) > EPS:
         a = ((-1) ** k) * (x - 1) ** k / (k ** 2)
