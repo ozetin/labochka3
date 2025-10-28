@@ -10,11 +10,15 @@ if __name__ == '__main__':
     S = 0.0
     k = 1
     a = 1.0
+    b = 1
+    p = x - 1
     if not (0 <= x <= 2):
         print("illegal value of x", file=sys.stderr)
 
     while abs(a) > EPS:
-        a = ((-1) ** k) * (x - 1) ** k / (k ** 2)
+        b = -b
+        a = b * p / (k ** 2)
+        p *= x - 1
         S += a
         k += 1
 
